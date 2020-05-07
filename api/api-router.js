@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
   res.status(200).json({ api: "up" });
 });
 
-router.get("/shouts", restricted, (req, res, next) => {
+router.get("/shouts", (req, res, next) => {
   Shouts.find()
     .then(shouts => {
       res.status(200).json(shouts);
